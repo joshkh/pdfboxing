@@ -12,8 +12,8 @@
 (defn arg-check [input start end split]
   (let [int-args [start end split]]
     (if (string? input)
-      (merge/check-for-pdfs  [input])
-      (merge/throw-exception "input must be a string"))
+      (merge/check-for-pdfs [input])
+      (common/obtain-document input))
     (check-if-integer (filter (complement nil?) int-args))))
 
 (defn pddocument->byte-array
